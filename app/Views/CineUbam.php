@@ -197,10 +197,26 @@
     <!-- HEADER: MENU + HEROE SECTION -->
     <header>
         <div class="heroe">
-            <h1>Cartelera</h1>
+            <h1>Cartelera CINE UBAM</h1>
+            <!-- Example single danger button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i>
+                    Mi Menú
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <p class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createPelicula"><i
+                                class="fa fa-film" aria-hidden="true"></i> Agregar
+                            Pelicula
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <section class="profile-data blk-1">
+
         <div class="contenido">
             <div class="form-group row">
                 <div class="form-group col-md-12">
@@ -279,6 +295,48 @@
         </div>
 
     </footer>
+    <!-- Creacion de Modal Creacion Peliculas -->
+    <div class="modal fade" id="createPelicula" tabindex="-1" aria-labelledby="createPelicula" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Pelicula a Cartelera</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nombre de la Película</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Por favor, coloca el nombre real que aparecerá en
+                                cartelera.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Seleccione una Imagen</label>
+                            <input type="file" class="form-control" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Costo de la Película</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Ejemplo. $40.60.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-times"
+                                aria-hidden="true"></i> Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="ComprarEntrada">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
