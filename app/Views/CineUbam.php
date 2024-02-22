@@ -303,26 +303,25 @@
                     <h5 class="modal-title" id="exampleModalLabel">Agregar Pelicula a Cartelera</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
+                <form id="FormAgregarPelicula" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de la Película</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="nombrePelicula" aria-describedby="emailHelp"
+                                name="nombrePelicula">
                             <div id="emailHelp" class="form-text">Por favor, coloca el nombre real que aparecerá en
                                 cartelera.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Seleccione una Imagen</label>
-                            <input type="file" class="form-control" id="inputGroupFile04"
-                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <input type="file" class="form-control" id="imagenPelicula" name="imagenPelicula">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Costo de la Película</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <input type="number" class="form-control" id="costoPelicula" aria-describedby="emailHelp"
+                                name="costoPelicula">
                             <div id="emailHelp" class="form-text">Ejemplo. $40.60.
                             </div>
                         </div>
@@ -331,7 +330,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-times"
                             aria-hidden="true"></i> Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="agregarPelicula" onclick="ComprarEntrada2()">
+                    <button type="button" class="btn btn-primary" id="agregarPelicula">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                         Agregar</button>
                 </div>
@@ -387,6 +386,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="<?= base_url('Script/script.js') ?>"></script>
+
 </body>
 
 </html>
