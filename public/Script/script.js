@@ -5,9 +5,45 @@ function init() {
     $('#agregarPelicula').on('click', function () {
         AgregarPelicula();
     });
+    listPelicula();
+
 
 }
+function listPelicula() {
+    $.ajax({
+        url: "index.php/listPeliculas",
+        type: "POST",
+        success: function (data) {
+            // Encuentra el modelo por su ID
+            var modelo = $('#ModeloTarjeta');
+            // Oculta el modelo antes de comenzar el bucle
+            modelo.hide();
+            if (data == "No Data") {
+                $('#EmptyPeliculas').text("Actualmente no existe ninguna película.");
+            } else {
+                $('#EmptyPeliculas').text("");
+                var data = JSON.parse(data);
+                // Vacía el contenedor antes de agregar nuevas tarjetas
+                $('#contenedorDePeliculas').empty();
 
+                // Agrega tarjetas dinámicamente
+                data.forEach(function (pelicula) {
+                    // Clona el modelo y oculta el clon antes de modificarlo
+                    var nuevaTarjeta = modelo.clone().hide();
+
+                    // Modifica los valores en el nuevo clon                    
+                    nuevaTarjeta.find('#NombrePeliculaList').text(pelicula.nombrePelicula);
+                    nuevaTarjeta.find('#ImagenPeliculaList').attr('src', pelicula.urlImagen);
+                    nuevaTarjeta.find('#PrecioPeliculaList').text("Precio Unitario. $" + pelicula.PrecioPelicula + " MXN");
+                    // nuevaTarjeta.find('.card-text strong:eq(1)').text(pelicula[3]);                    
+
+                    // Añade el nuevo clon al contenedor y muestra el clon
+                    nuevaTarjeta.appendTo('#contenedorDePeliculas').show();
+                });
+            }
+        }
+    });
+}
 function AgregarPelicula() {
     // Crear un objeto FormData para enviar el formulario, incluyendo archivos
     var formData = new FormData($('#FormAgregarPelicula')[0]);
@@ -27,8 +63,8 @@ function AgregarPelicula() {
                     confirmButtonText: 'Entendido',
                     timer: 3000
                 })
-                $("#modalEditar").modal('hide');
-                //ActualizarTabla(); // Llamar a la función para actualizar la tabla
+                $("#createPelicula").modal('hide');
+                listPelicula();
             } else {
                 Swal.fire({
                     title: datos,

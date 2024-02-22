@@ -8,6 +8,12 @@ class CineUbam extends BaseController
     {
         return view('CineUbam');
     }
+    public function listPeliculas()
+    {
+        $cineModel = new \App\Models\CineModel();
+        $data = $cineModel->listPeliculas();
+        return $data;
+    }
     public function agregarPelicula()
     {
         $nombre = $this->request->getPost('nombrePelicula');
@@ -27,7 +33,7 @@ class CineUbam extends BaseController
                         if ($rspta == true) {
                             //Validacion de que se inserto correctamente la pelicula
                             //Empezar a mover el archivo a Images
-                            $pelicula->move(ROOTPATH . 'public/Images', $pelicula->getName());
+                            $pelicula->move(ROOTPATH . 'Images', $pelicula->getName());
                             return "Película Agregada";
                         } else {
                             return "Algo Salió Mal";

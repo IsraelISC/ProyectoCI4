@@ -220,50 +220,20 @@
         <div class="contenido">
             <div class="form-group row">
                 <div class="form-group col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
+                    <div id="contenedorDePeliculas" class="row">
+
+                        <!-- Modelo de Tarjeta -->
+                        <p id="EmptyPeliculas"></p>
+                        <div class="col-md-4" id="ModeloTarjeta">
                             <div class="card">
                                 <img src="<?= base_url('Images/001_p.jpg') ?>" class="card-img-top" alt="..."
-                                    height="490">
+                                    height="490" id="ImagenPeliculaList">
                                 <div class="card-body">
-                                    <p class="card-text"><b>Kun Fu Panda 3</b></p>
-                                    <p class="card-text">Precio Unitario. $50 MXN</b></p>
+                                    <p class="card-text"><b id="NombrePeliculaList">Kun Fu Panda 3</b></p>
+                                    <p class="card-text" id="PrecioPeliculaList">Precio Unitario. $50 MXN</b></p>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" onclick="Datos('Kun Fu Panda 3',50)"> <i
-                                            class="fa fa-ticket" aria-hidden="true"></i>
-                                        Comprar Entrada
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="https://i.ibb.co/TbT0ChC/w3-XORYUDx-H53iiu-WRw6nqr-Zdwyb-BM0k-I88-F9cc-Hi-Dmw-1024x1024-2x-jpg.webp"
-                                    class="card-img-top" alt="..." height="490">
-                                <div class="card-body">
-                                    <p class="card-text"><b>Avengers Infinity War</b></p>
-                                    <p class="card-text">Precio Unitario. $60 MXN</b></p>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" onclick="Datos('Avengers Infinity War',60)"> <i
-                                            class="fa fa-ticket" aria-hidden="true"></i>
-                                        Comprar Entrada
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="https://i.ibb.co/vj8bxbM/1102210.jpg" class="card-img-top" alt="..."
-                                    height="490">
-                                <div class="card-body">
-                                    <p class="card-text"><b>Coco</b></p>
-                                    <p class="card-text">Precio Unitario. $30 MXN</b></p>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" onclick="Datos('Coco',30)"> <i
                                             class="fa fa-ticket" aria-hidden="true"></i>
                                         Comprar Entrada
                                     </button>
