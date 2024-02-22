@@ -8,4 +8,8 @@ class CineUbam extends BaseController
     {
         return view('CineUbam');
     }
+    public function agregarPelicula()
+    {
+        return "Entre";
+    }
 }

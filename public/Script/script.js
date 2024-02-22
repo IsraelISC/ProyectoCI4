@@ -1,8 +1,38 @@
 function init() {
     $('#ComprarEntrada').on('click', function () {
         ComprarEntrada();
-    })
+    });
 
+}
+
+function AgregarPelicula() {
+    console.log("Entre script")
+    // Enviar la solicitud AJAX al controlador
+    // $.ajax({
+    //     url: 'index.php/agregarPelicula',
+    //     type: "POST",
+    //     data: $('#formEditarPersonaje').serialize(),
+    //     success: function (datos) {
+    //         //Mostrar los datos que devolvio el controller
+    //         if (datos == "Actualización Exitosa") {
+    //             Swal.fire({
+    //                 title: datos,
+    //                 icon: 'success',
+    //                 confirmButtonText: 'Entendido',
+    //                 timer: 3000
+    //             })
+    //             $("#modalEditar").modal('hide');
+    //             //ActualizarTabla(); // Llamar a la función para actualizar la tabla
+    //         } else {
+    //             Swal.fire({
+    //                 title: datos,
+    //                 icon: 'error',
+    //                 confirmButtonText: 'Entendido',
+    //                 timer: 3000
+    //             })
+    //         }
+    //     }
+    // });
 }
 function ComprarEntrada() {
     Swal.fire({

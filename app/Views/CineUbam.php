@@ -327,13 +327,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-times"
-                                aria-hidden="true"></i> Cancelar</button>
-                        <button type="button" class="btn btn-primary" id="ComprarEntrada">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>
-                    </div>
                 </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-times"
+                            aria-hidden="true"></i> Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="agregarPelicula" onclick="ComprarEntrada2()">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Agregar</button>
+                </div>
+
             </div>
         </div>
     </div>
