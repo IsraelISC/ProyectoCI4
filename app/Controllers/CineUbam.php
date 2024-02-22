@@ -22,9 +22,16 @@ class CineUbam extends BaseController
                 if ($extension === 'jpg' || $extension === 'jpeg' || $extension === "png") {
                     if ($pelicula->getSize() <= 5 * 1024 * 1024) {
                         //Insertar los datos como nombre, costo y la imagen antes de movel
-
-                        //Empezar a mover el archivo a un lugar
-                        $pelicula->move(ROOTPATH . 'public/Images', $pelicula->getName());
+                        $cineModel = new \App\Models\CineModel();
+                        $rspta = $cineModel->insertarPelicula($nombre, 'Images/' . $pelicula->getName(), $costo);
+                        if ($rspta == true) {
+                            //Validacion de que se inserto correctamente la pelicula
+                            //Empezar a mover el archivo a Images
+                            $pelicula->move(ROOTPATH . 'public/Images', $pelicula->getName());
+                            return "Película Agregada";
+                        } else {
+                            return "Algo Salió Mal";
+                        }
                     } else {
                         return "El archivo es demasiado grande";
                     }

@@ -223,8 +223,8 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="https://i.ibb.co/MsYfY9v/Kung-Fu-Panda-3-poster.webp" class="card-img-top"
-                                    alt="..." height="490">
+                                <img src="<?= base_url('Images/001_p.jpg') ?>" class="card-img-top" alt="..."
+                                    height="490">
                                 <div class="card-body">
                                     <p class="card-text"><b>Kun Fu Panda 3</b></p>
                                     <p class="card-text">Precio Unitario. $50 MXN</b></p>

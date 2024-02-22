@@ -20,7 +20,7 @@ function AgregarPelicula() {
         processData: false,
         contentType: false,
         success: function (datos) {
-            if (datos == "Actualización Exitosa") {
+            if (datos == "Película Agregada") {
                 Swal.fire({
                     title: datos,
                     icon: 'success',
