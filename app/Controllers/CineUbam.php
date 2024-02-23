@@ -8,6 +8,23 @@ class CineUbam extends BaseController
     {
         return view('CineUbam');
     }
+    public function eliminarPelicula()
+    {
+        $SelectPelicula = $this->request->getPost('SelectPelicula');
+        if (empty($SelectPelicula) || $SelectPelicula == "null") {
+            return "Campos Vacíos";
+        } else {
+            $cineModel = new \App\Models\CineModel();
+            $rspta = $cineModel->eliminarPelicula($SelectPelicula);
+            return $rspta ? "Eliminación Exitosa" : "Algo Salió Mal";
+        }
+    }
+    public function showSelect()
+    {
+        $cineModel = new \App\Models\CineModel();
+        $data = $cineModel->listPeliculas();
+        return $data;
+    }
     public function listPeliculas()
     {
         $cineModel = new \App\Models\CineModel();
@@ -33,7 +50,7 @@ class CineUbam extends BaseController
                         if ($rspta == true) {
                             //Validacion de que se inserto correctamente la pelicula
                             //Empezar a mover el archivo a Images
-                            $pelicula->move(ROOTPATH . 'Images', $pelicula->getName());
+                            $pelicula->move(ROOTPATH . 'public/Images', $pelicula->getName());
                             return "Película Agregada";
                         } else {
                             return "Algo Salió Mal";

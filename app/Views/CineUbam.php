@@ -210,6 +210,10 @@
                                 class="fa fa-film" aria-hidden="true"></i> Agregar
                             Pelicula
                         </p>
+                        <p class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deletePelicula"
+                            id="ShowSelect"><i class=" fa fa-trash-o" aria-hidden="true"></i> Eliminar
+                            Pelicula
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -226,15 +230,14 @@
                         <p id="EmptyPeliculas"></p>
                         <div class="col-md-4" id="ModeloTarjeta">
                             <div class="card">
-                                <img src="<?= base_url('Images/001_p.jpg') ?>" class="card-img-top" alt="..."
-                                    height="490" id="ImagenPeliculaList">
+                                <img src="" class="card-img-top" alt="..." height="490" id="ImagenPeliculaList">
                                 <div class="card-body">
                                     <p class="card-text"><b id="NombrePeliculaList">Kun Fu Panda 3</b></p>
                                     <p class="card-text" id="PrecioPeliculaList">Precio Unitario. $50 MXN</b></p>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" onclick="Datos('Kun Fu Panda 3',50)"> <i
-                                            class="fa fa-ticket" aria-hidden="true"></i>
+                                        data-bs-target="#exampleModal" onclick="Datos('Kun Fu Panda 3',50)"
+                                        id="btnComprar"> <i class="fa fa-ticket" aria-hidden="true"></i>
                                         Comprar Entrada
                                     </button>
                                 </div>
@@ -265,6 +268,36 @@
         </div>
 
     </footer>
+    <!-- Creacion de Modal eliminar Peliculas -->
+    <div class="modal fade" id="deletePelicula" tabindex="-1" aria-labelledby="deletePelicula" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Pelicula a Cartelera</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="FormEliminarPelicula" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Seleccione una Película</label>
+                            <select class="form-control" id="SelectPelicula" name="SelectPelicula">
+                                <option>prueba</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-times"
+                            aria-hidden="true"></i> Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="eliminarPelicula">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        Eliminar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Creacion de Modal Creacion Peliculas -->
     <div class="modal fade" id="createPelicula" tabindex="-1" aria-labelledby="createPelicula" aria-hidden="true">
         <div class="modal-dialog">

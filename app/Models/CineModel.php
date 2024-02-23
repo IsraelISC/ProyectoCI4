@@ -5,6 +5,17 @@ use CodeIgniter\Model;
 
 class CineModel extends Model
 {
+    public function eliminarPelicula($id)
+    {
+        $sql = "CALL deletePelicula(?)";
+        $query = $this->db->query($sql, array($id, ));
+        // Verificar si la inserción fue exitosa
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function insertarPelicula($nombre, $url, $costo)
     {
         $sql = "CALL createPelicula(?, ?, ?)";

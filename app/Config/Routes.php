@@ -8,3 +8,6 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'CineUbam::index');
 $routes->post('agregarPelicula', 'CineUbam::agregarPelicula');
 $routes->post('listPeliculas', 'CineUbam::listPeliculas');
+$routes->post('showSelect', 'CineUbam::showSelect');
+$routes->post('eliminarPelicula', 'CineUbam::eliminarPelicula');
+
